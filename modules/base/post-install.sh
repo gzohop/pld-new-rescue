@@ -109,3 +109,12 @@ EOF
 cat >> root/etc/sysctl.d/pldnr_printk.conf <<'EOF'
 kernel.printk = 4	4	1	7
 EOF
+
+# disable console beep
+
+cat >> root/etc/profile.d/disable-beep.sh <<'EOF'
+setterm -blength 0
+
+EOF
+
+chmod +x root/etc/profile.d/disable-beep.sh
